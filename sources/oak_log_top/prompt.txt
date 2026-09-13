@@ -1,0 +1,7 @@
+Built-in imagegen | 2026-09-13 | oak_log_top
+
+BASE COLOR
+Create one original photorealistic PBR base-color square texture of oak end grain filling the full square, orthographic flat scan of cut wood. Warm natural medium brown tan, clear irregular concentric annual growth rings centered slightly off-center, subtle radial checking cracks, tiny pores and saw wear. Wood fills every corner, NO circular silhouette, NO bark border, NO object edges or background, no perspective. Uniform diffuse illumination no shadows or highlights. Moderate contrast readable rings at 128px, not cartoon. Opposite edges seamless for Minecraft texture. 1024x1024.
+
+HEIGHT EDIT (reference: generated-original.png)
+Convert the supplied texture into a precisely registered grayscale HEIGHT MAP for the SAME surface. Preserve EXACT pixel positions, framing, size and every major crack/ridge; do not redesign or shift any features. White/light gray = highest surface, black/dark gray = deepest cracks. Remove ALL lighting, color, mineral speckling and shadows. Cut end grain is almost planar light grey; only fine growth-ring grooves and radial checking cracks are slightly recessed. No central bowl or radial gradient. Output only grayscale technical map, square full bleed no text no border. Keep edge continuity.

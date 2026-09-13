@@ -1,0 +1,7 @@
+Built-in imagegen | 2026-09-13 | oak_log
+
+BASE COLOR
+Create one original seamless photorealistic PBR base-color texture tile of mature oak tree bark, orthographic flat surface scan filling square image. Thick rugged pale grey-brown corky bark ridges, irregular layered flakes, warm dark brown deeply recessed vertical furrows, branching tiny cracks. About 8 main vertical ridges across tile, organic varied widths, realistic fine structure but strong readable medium shapes for 128px downsample. Vertical grain runs bottom to top. Uniform diffuse illumination no directional shadows or specular highlights. No perspective, no object, no background, no text or watermark. Seamless opposite edges. 1024x1024.
+
+HEIGHT EDIT (reference: generated-original.png)
+Convert the supplied texture into a precisely registered grayscale HEIGHT MAP for the SAME surface. Preserve EXACT pixel positions, framing, size and every major crack/ridge; do not redesign or shift any features. White/light gray = highest surface, black/dark gray = deepest cracks. Remove ALL lighting, color, mineral speckling and shadows. Bark ridge tops light gray, recessed vertical furrows dark, flake edges intermediate soft bevels, quiet smooth interiors, not noisy. Output only grayscale technical map, square full bleed no text no border. Keep edge continuity.

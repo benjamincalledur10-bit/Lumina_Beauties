@@ -3,52 +3,124 @@
   "runtime": "Minecraft and shaders NOT tested",
   "editions": {
     "64": {
-      "files": 6,
+      "files": 12,
       "seams": {
         "stone.png": {
           "wrap_to_internal_mean_y_x": [
-            1.12,
-            1.243
+            0.755,
+            1.029
           ]
         },
         "stone_n.png": {
           "wrap_to_internal_mean_y_x": [
-            1.07,
-            1.005
+            0.87,
+            0.925
           ]
         },
         "stone_s.png": {
           "wrap_to_internal_mean_y_x": [
-            1.114,
-            1.219
+            0.646,
+            0.847
+          ]
+        },
+        "oak_log.png": {
+          "wrap_to_internal_mean_y_x": [
+            0.895,
+            1.13
+          ]
+        },
+        "oak_log_n.png": {
+          "wrap_to_internal_mean_y_x": [
+            0.882,
+            1.074
+          ]
+        },
+        "oak_log_s.png": {
+          "wrap_to_internal_mean_y_x": [
+            0.766,
+            0.869
+          ]
+        },
+        "oak_log_top.png": {
+          "wrap_to_internal_mean_y_x": [
+            1.492,
+            1.161
+          ]
+        },
+        "oak_log_top_n.png": {
+          "wrap_to_internal_mean_y_x": [
+            1.122,
+            0.958
+          ]
+        },
+        "oak_log_top_s.png": {
+          "wrap_to_internal_mean_y_x": [
+            1.237,
+            1.048
           ]
         }
       },
-      "sha256": "6cf944205cae7f9279cc1350aedadfd3dd90ff6e264ed48d127427136a51dd80"
+      "sha256": "2f2e1b57c3f8b62a508901e3c2192070e43de29ce04d42e04cdb4280d679ce90"
     },
     "128": {
-      "files": 6,
+      "files": 12,
       "seams": {
         "stone.png": {
           "wrap_to_internal_mean_y_x": [
-            1.149,
-            1.124
+            0.813,
+            1.002
           ]
         },
         "stone_n.png": {
           "wrap_to_internal_mean_y_x": [
-            1.054,
-            0.982
+            0.904,
+            0.902
           ]
         },
         "stone_s.png": {
           "wrap_to_internal_mean_y_x": [
-            1.211,
-            1.178
+            0.597,
+            0.906
+          ]
+        },
+        "oak_log.png": {
+          "wrap_to_internal_mean_y_x": [
+            1.113,
+            1.168
+          ]
+        },
+        "oak_log_n.png": {
+          "wrap_to_internal_mean_y_x": [
+            1.013,
+            0.985
+          ]
+        },
+        "oak_log_s.png": {
+          "wrap_to_internal_mean_y_x": [
+            0.972,
+            0.949
+          ]
+        },
+        "oak_log_top.png": {
+          "wrap_to_internal_mean_y_x": [
+            1.144,
+            1.021
+          ]
+        },
+        "oak_log_top_n.png": {
+          "wrap_to_internal_mean_y_x": [
+            0.894,
+            0.881
+          ]
+        },
+        "oak_log_top_s.png": {
+          "wrap_to_internal_mean_y_x": [
+            1.096,
+            0.762
           ]
         }
       },
-      "sha256": "aeb1ae91bb1c8a57fd79aaeceb59534d13411b6f546a3f7e0977b7fbb7f6c4de"
+      "sha256": "fd0d4853bc808f174b4daa86fa9c84131478020d7e2b6bae262b2b6f8e79ccad"
     }
   }
 }

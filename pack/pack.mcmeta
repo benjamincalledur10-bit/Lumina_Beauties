@@ -2,6 +2,6 @@
   "pack": {
     "min_format": [75, 0],
     "max_format": [75, 0],
-    "description": "Lumina Beauties 0.0.1-alpha.1 | {resolution}x\nStone prototype | Java 1.21.11"
+    "description": "Lumina Beauties {version} | {resolution}x\nStone + oak logs | Java 1.21.11"
   }
 }

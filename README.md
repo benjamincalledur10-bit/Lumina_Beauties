@@ -6,7 +6,7 @@ Lumina Beauties is an original resource pack in development for **Minecraft: Jav
 
 Designed with **Lumina Event Horizon** and **Lumina Lite** in mind, Lumina Beauties will be the material and texture companion to the **Lumina Realism** modpack.
 
-> **Project status: local 0.0.1-alpha.1 stone prototype.** Stone textures and LabPBR maps are available in 64x and 128x, with editable sources, packaging tools, and file validation. In-game appearance and shader compatibility remain pending Benji’s testing. No public release is announced.
+> **Project status: v1a-alpha.2 pre-release (0.0.1-alpha.2).** Reworked stone and oak log textures with separate relief sources and LabPBR maps are available in 64x and 128x. File validation is complete; in-game appearance and shader compatibility remain pending Benji’s testing.
 
 ## 🌿 The visual direction
 
@@ -22,8 +22,8 @@ Stone should feel weathered, soil should feel earthy, and wood should show grain
 
 | Edition | Texture resolution | Intended role | Status |
 | --- | --- | --- | --- |
-| **Lumina Beauties 64x** | 64 × 64 per block texture | Base edition with a smaller texture memory footprint | Stone prototype exported |
-| **Lumina Beauties 128x** | 128 × 128 per block texture | Higher-resolution edition for additional surface detail | Stone prototype exported |
+| **Lumina Beauties 64x** | 64 × 64 per block texture | Base edition with a smaller texture memory footprint | Stone and oak logs exported |
+| **Lumina Beauties 128x** | 128 × 128 per block texture | Higher-resolution edition for additional surface detail | Stone and oak logs exported |
 
 Both editions will share the same art direction and material sources. The 128x edition is intended to preserve additional source detail, rather than simply enlarge the 64x images.
 
@@ -55,11 +55,12 @@ Automatic texture-resolution selection through Lumina Engine is not implemented.
 
 ## 🧱 First prototype
 
-The local **0.0.1-alpha.1** prototype targets **Minecraft Java 1.21.11** and currently includes **stone only**. The initial material roadmap remains:
+The **v1a-alpha.2** pre-release targets **Minecraft Java 1.21.11** and includes **stone, oak log bark, and oak end grain**. The initial material roadmap remains:
 
 | Material | Initial focus |
 | --- | --- |
-| **Stone** | Natural variation and restrained surface relief — exported, in-game testing pending |
+| **Stone** | Fractured rock with deeper fissures and separate relief maps — exported, in-game testing pending |
+| **Oak logs** | Rugged bark and cut end grain — exported, in-game testing pending |
 | **Dirt** | Earthy color, granularity, and a matte finish — planned |
 | **Oak planks** | Wood grain, plank definition, and subtle wear — planned |
 
@@ -72,13 +73,13 @@ Minecraft **26.2** is a later compatibility target; support will be documented a
 - **`luminabeautiesdev`** — working branch for textures, tooling, and experiments.
 - **`main`** — intended home for reviewed release milestones.
 
-Editable stone sources are preserved in `sources/stone/`. After installing `requirements.txt`, run `python tools/build.py` to export and validate both ZIP editions. See [development and testing instructions](docs/DEVELOPMENT.md) and the [128x tiled preview](previews/stone-128x-3x3.png).
+Editable material sources and generation prompts are preserved in `sources/stone/`, `sources/oak_log/`, and `sources/oak_log_top/`. After installing `requirements.txt`, run `python tools/build.py` to export and validate both ZIP editions. See [development and testing instructions](docs/DEVELOPMENT.md) and the [128x tiled preview](previews/stone-128x-3x3.png).
 
 Before a prototype is considered ready, its metadata, texture dimensions, material maps, ZIP structure, and in-game appearance must be checked.
 
 ## 📦 Downloads
 
-No public download is announced yet. Local test ZIPs are generated in `dist/`; [installation and manual testing instructions](docs/DEVELOPMENT.md) are available. Tested Minecraft and shader configurations remain pending.
+Download the 64x or 128x ZIP from the [v1a-alpha.2 pre-release](https://github.com/benjamincalledur10-bit/Lumina_Beauties/releases/tag/v1a-alpha.2). Local test ZIPs are generated in `dist/`; [installation and manual testing instructions](docs/DEVELOPMENT.md) are available. Tested Minecraft and shader configurations remain pending.
 
 ## 📄 License
 

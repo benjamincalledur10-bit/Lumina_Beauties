@@ -49,7 +49,7 @@ def normals(height):
     return n / np.linalg.norm(n, axis=-1, keepdims=True)
 
 
-def export_maps(color, height, settings, size):
+def export_maps(color, height, settings, size, name="stone"):
     albedo = u8(srgb(resize_wrap(linear(color), size)))
     h = np.clip(resize_wrap(height, size), 0, 1)
     # Quantize height first: normal field agrees with the actual shipped alpha.
@@ -61,4 +61,4 @@ def export_maps(color, height, settings, size):
     spec = np.dstack((u8(smooth), np.full(h.shape, round(settings['f0'] * 255), np.uint8),
                      np.full(h.shape, round(settings['porosity'] * 64), np.uint8),
                      np.full(h.shape, 255, np.uint8)))
-    return {'stone.png': albedo, 'stone_n.png': normal, 'stone_s.png': spec}
+    return {f'{name}.png': albedo, f'{name}_n.png': normal, f'{name}_s.png': spec}

@@ -12,12 +12,16 @@ TEXTURES = 'assets/minecraft/textures/block'
 
 
 def build():
-    source = ROOT / 'sources/stone'
-    settings = json.loads((source / 'material.json').read_text())
-    color = np.asarray(Image.open(source / 'albedo.png').convert('RGB')) / 255.
-    height = np.asarray(Image.open(source / 'height.png'), dtype=float) / 65535
-    if color.shape != (1024, 1024, 3) or height.shape != (1024, 1024):
-        raise ValueError('Editable masters must be 1024x1024')
+    settings = json.loads((ROOT / 'pack/release.json').read_text())
+    sources = {}
+    for material in settings['materials']:
+        source = ROOT / 'sources' / material
+        params = json.loads((source / 'material.json').read_text())
+        color = np.asarray(Image.open(source / 'albedo.png').convert('RGB')) / 255.
+        height = np.asarray(Image.open(source / 'height.png'), dtype=float) / 65535
+        if color.shape != (1024,1024,3) or height.shape != (1024,1024):
+            raise ValueError('Editable masters must be 1024x1024')
+        sources[material] = (color, height, params)
     dist = ROOT / 'dist'
     dist.mkdir(exist_ok=True)
     (ROOT / 'previews').mkdir(exist_ok=True)
@@ -27,10 +31,12 @@ def build():
         folder = ROOT / 'build' / name
         textures = folder / TEXTURES
         textures.mkdir(parents=True, exist_ok=True)
-        maps = export_maps(color, height, settings, size)
+        maps = {}
+        for material, (color, height, params) in sources.items():
+            maps.update(export_maps(color, height, params, size, material))
         for filename, pixels in maps.items():
             Image.fromarray(pixels).save(textures / filename)
-        meta = (ROOT / 'pack/pack.mcmeta').read_text().replace('{resolution}', str(size))
+        meta = (ROOT / 'pack/pack.mcmeta').read_text().replace('{resolution}', str(size)).replace('{version}', settings['version'])
         (folder / 'pack.mcmeta').write_text(meta)
         (folder / 'LICENSE').write_bytes((ROOT / 'LICENSE').read_bytes())
         Image.fromarray(maps['stone.png']).resize((128, 128), Image.Resampling.NEAREST).save(folder / 'pack.png')
@@ -45,21 +51,24 @@ def build():
                 info.external_attr = 0o100644 << 16
                 z.writestr(info, (folder / entry).read_bytes())
         checksums.append(f'{hashlib.sha256(archive.read_bytes()).hexdigest()}  {archive.name}')
-        tile = Image.fromarray(np.tile(maps['stone.png'], (3, 3, 1)))
-        tile.resize((768, 768), Image.Resampling.NEAREST).save(ROOT / f'previews/stone-{size}x-3x3.png')
-        # Channels are displayed separately; packed alpha is material data, not opacity.
-        n, s = maps['stone_n.png'], maps['stone_s.png']
-        panels = [maps['stone.png'], np.dstack((n[..., :2], np.full((size,size),255,np.uint8))), n[...,3], n[...,2], s[...,0]]
-        board = Image.new('RGB', (1280, 292), '#20252b')
-        draw = ImageDraw.Draw(board)
-        for i, (pixels, label) in enumerate(zip(panels, ['Albedo', 'Normal XY (DX)', 'Height', 'AO', 'Smoothness'])):
-            board.paste(Image.fromarray(pixels).convert('RGB').resize((256,256), Image.Resampling.NEAREST), (i*256,36))
-            draw.text((i*256+10,10), f'{size}x | {label}', fill='white')
-        board.save(ROOT / f'previews/stone-{size}x-maps.png')
+        for material in sources:
+            tile = Image.fromarray(np.tile(maps[f'{material}.png'], (3, 3, 1)))
+            tile.resize((768, 768), Image.Resampling.NEAREST).save(ROOT / f'previews/{material}-{size}x-3x3.png')
+            # Channels are displayed separately; packed alpha is material data, not opacity.
+            n, s = maps[f'{material}_n.png'], maps[f'{material}_s.png']
+            panels = [maps[f'{material}.png'], np.dstack((n[..., :2], np.full((size,size),255,np.uint8))), n[...,3], n[...,2], s[...,0]]
+            board = Image.new('RGB', (1280, 292), '#20252b')
+            draw = ImageDraw.Draw(board)
+            for i, (pixels, label) in enumerate(zip(panels, ['Albedo', 'Normal XY (DX)', 'Height', 'AO', 'Smoothness'])):
+                board.paste(Image.fromarray(pixels).convert('RGB').resize((256,256), Image.Resampling.NEAREST), (i*256,36))
+                draw.text((i*256+10,10), f'{size}x | {label}', fill='white')
+            board.save(ROOT / f'previews/{material}-{size}x-maps.png')
         print(archive.relative_to(ROOT))
     (dist / 'SHA256SUMS').write_text('\n'.join(checksums) + '\n')
     from validate import validate
     validate()
+    from preview_relief import preview
+    preview()
 
 
 if __name__ == '__main__':

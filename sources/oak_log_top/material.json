@@ -1,0 +1,9 @@
+{
+  "height_min": 230,
+  "height_max": 255,
+  "smoothness_min": 0.14,
+  "smoothness_max": 0.25,
+  "f0": 0.04,
+  "porosity": 0.1875,
+  "ao_strength": 0.12
+}
