@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1-alpha.1",
+  "minecraft": "1.21.11",
+  "height_min": 218,
+  "height_max": 255,
+  "smoothness_min": 0.12,
+  "smoothness_max": 0.20,
+  "f0": 0.04,
+  "porosity": 0.28,
+  "ao_strength": 0.12
+}

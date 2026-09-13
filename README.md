@@ -6,7 +6,7 @@ Lumina Beauties is an original resource pack in development for **Minecraft: Jav
 
 Designed with **Lumina Event Horizon** and **Lumina Lite** in mind, Lumina Beauties will be the material and texture companion to the **Lumina Realism** modpack.
 
-> **Project status: initial development.** Both editions, their material maps, and shader compatibility are development goals. No playable release or completed texture coverage is announced yet.
+> **Project status: local 0.0.1-alpha.1 stone prototype.** Stone textures and LabPBR maps are available in 64x and 128x, with editable sources, packaging tools, and file validation. In-game appearance and shader compatibility remain pending Benji’s testing. No public release is announced.
 
 ## 🌿 The visual direction
 
@@ -22,8 +22,8 @@ Stone should feel weathered, soil should feel earthy, and wood should show grain
 
 | Edition | Texture resolution | Intended role | Status |
 | --- | --- | --- | --- |
-| **Lumina Beauties 64x** | 64 × 64 per block texture | Base edition with a smaller texture memory footprint | Planned |
-| **Lumina Beauties 128x** | 128 × 128 per block texture | Higher-resolution edition for additional surface detail | Planned |
+| **Lumina Beauties 64x** | 64 × 64 per block texture | Base edition with a smaller texture memory footprint | Stone prototype exported |
+| **Lumina Beauties 128x** | 128 × 128 per block texture | Higher-resolution edition for additional surface detail | Stone prototype exported |
 
 Both editions will share the same art direction and material sources. The 128x edition is intended to preserve additional source detail, rather than simply enlarge the 64x images.
 
@@ -55,13 +55,13 @@ Automatic texture-resolution selection through Lumina Engine is not implemented.
 
 ## 🧱 First prototype
 
-The proposed first milestone is **0.0.1-alpha.1**, initially targeting **Minecraft Java 1.21.11** with three materials:
+The local **0.0.1-alpha.1** prototype targets **Minecraft Java 1.21.11** and currently includes **stone only**. The initial material roadmap remains:
 
 | Material | Initial focus |
 | --- | --- |
-| **Stone** | Natural variation and restrained surface relief |
-| **Dirt** | Earthy color, granularity, and a matte finish |
-| **Oak planks** | Wood grain, plank definition, and subtle wear |
+| **Stone** | Natural variation and restrained surface relief — exported, in-game testing pending |
+| **Dirt** | Earthy color, granularity, and a matte finish — planned |
+| **Oak planks** | Wood grain, plank definition, and subtle wear — planned |
 
 The prototype will be used to assess repetition, material consistency, and appearance at different viewing distances in both resolutions. Testing with Event Horizon and Lumina Lite will guide further adjustments.
 
@@ -69,16 +69,16 @@ Minecraft **26.2** is a later compatibility target; support will be documented a
 
 ## 🛠️ Development
 
-- **`luminabeautiesdev`** — planned working branch for textures, tooling, and experiments.
+- **`luminabeautiesdev`** — working branch for textures, tooling, and experiments.
 - **`main`** — intended home for reviewed release milestones.
 
-Editable material sources will be preserved so both editions can be exported consistently. Packaging tools and their exact commands will be documented as they are implemented.
+Editable stone sources are preserved in `sources/stone/`. After installing `requirements.txt`, run `python tools/build.py` to export and validate both ZIP editions. See [development and testing instructions](docs/DEVELOPMENT.md) and the [128x tiled preview](previews/stone-128x-3x3.png).
 
 Before a prototype is considered ready, its metadata, texture dimensions, material maps, ZIP structure, and in-game appearance must be checked.
 
 ## 📦 Downloads
 
-There is no playable download announced yet. Installation instructions and tested configurations will accompany the first available build.
+No public download is announced yet. Local test ZIPs are generated in `dist/`; [installation and manual testing instructions](docs/DEVELOPMENT.md) are available. Tested Minecraft and shader configurations remain pending.
 
 ## 📄 License
 

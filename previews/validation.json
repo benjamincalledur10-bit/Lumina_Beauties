@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "runtime": "Minecraft and shaders NOT tested",
+  "editions": {
+    "64": {
+      "files": 6,
+      "seams": {
+        "stone.png": {
+          "wrap_to_internal_mean_y_x": [
+            1.12,
+            1.243
+          ]
+        },
+        "stone_n.png": {
+          "wrap_to_internal_mean_y_x": [
+            1.07,
+            1.005
+          ]
+        },
+        "stone_s.png": {
+          "wrap_to_internal_mean_y_x": [
+            1.114,
+            1.219
+          ]
+        }
+      },
+      "sha256": "6cf944205cae7f9279cc1350aedadfd3dd90ff6e264ed48d127427136a51dd80"
+    },
+    "128": {
+      "files": 6,
+      "seams": {
+        "stone.png": {
+          "wrap_to_internal_mean_y_x": [
+            1.149,
+            1.124
+          ]
+        },
+        "stone_n.png": {
+          "wrap_to_internal_mean_y_x": [
+            1.054,
+            0.982
+          ]
+        },
+        "stone_s.png": {
+          "wrap_to_internal_mean_y_x": [
+            1.211,
+            1.178
+          ]
+        }
+      },
+      "sha256": "aeb1ae91bb1c8a57fd79aaeceb59534d13411b6f546a3f7e0977b7fbb7f6c4de"
+    }
+  }
+}
