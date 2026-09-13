@@ -82,7 +82,7 @@ There is no playable download announced yet. Installation instructions and teste
 
 ## 📄 License
 
-A license has not been selected yet. Licensing terms for textures, source materials, and tooling will be documented before public distribution.
+Lumina Beauties is distributed under the [Lumina Beauties Resource Pack License, Version 1.0](LICENSE). See the license for the full terms covering both the 64x and 128x editions.
 
 ---
 
